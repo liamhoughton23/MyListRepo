@@ -8,12 +8,12 @@ namespace MyListSolution
 {
     public class MyList<T>
     {
-        public void AddingItem(T item)
+        public void Add(T item)
         {
 
         }
 
-        public void RemovingItem()
+        public void Remove(T item)
         {
 
         }
@@ -23,12 +23,17 @@ namespace MyListSolution
 
         }
 
-        public void NumberCount(T item)
+        public void Count(T item)
         {
 
         }
 
         public void ZipingTwoCustomClasses()
+        {
+
+        }
+
+        public void Index(T item)
         {
 
         }

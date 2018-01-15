@@ -10,6 +10,7 @@ namespace MyListSolution
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

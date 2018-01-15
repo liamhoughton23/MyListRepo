@@ -16,9 +16,9 @@ namespace ListTesting
             //act
             numberTest.Add(numbers);
             //assert
-            Assert.AreEqual(1, numberTest.Count);
+            Assert.AreEqual(1, numberTest.Length);
         }
-
+        [TestMethod]
         public void AddIntCountTestMediumSize()
         {
             //arrange
@@ -34,10 +34,10 @@ namespace ListTesting
             numberTest.Add(6);
             numberTest.Add(7);
             //assert
-            Assert.AreEqual(7, numberTest.Count);
+            Assert.AreEqual(8, numberTest.Length);
         }
 
-        public void AddIntTestLargeSize()
+        /*public void AddIntTestLargeSize()
         {
             //arrange
             MyList<int> numberTest = new MyList<int>();
@@ -80,7 +80,7 @@ namespace ListTesting
         {
             //arrange
             int addingNumberOfObjects = 16;
-            MyList<object> list = new MyList<object>();
+            MyList<TestingObjects> list = new MyList<TestingObjects>();
             //act
             TestingObjects objectList = new TestingObjects();
             for (int i = 0; i < addingNumberOfObjects; i++)
@@ -240,5 +240,9 @@ namespace ListTesting
             //assert
             Assert.AreEqual("sixth add", stringRemoveTest[2]);
         }
+        public void CountTest()
+        {
+
+        }*/
     }
 }

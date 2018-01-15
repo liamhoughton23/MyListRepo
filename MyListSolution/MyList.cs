@@ -15,12 +15,11 @@ namespace MyListSolution
 
         public MyList()
         {
-            array = new T[5];
-            capacity = 5;
+            capacity = 4;
+            array = new T[5];           
             count = Count;
             length = Length;
             
-
         }
 
 
@@ -35,12 +34,11 @@ namespace MyListSolution
         {
             get { return length; }
             set {
-                length = -1;
                 length = value; }
         }
         public void LargerArray()
         {
-            int newCapacity = capacity * 3;
+            int newCapacity = capacity * 10;
             array = new T[newCapacity];
         }
         public void Add(T item)
@@ -68,7 +66,11 @@ namespace MyListSolution
 
         public void Remove(T item)
         {
-           
+            if ( == item)
+            {
+                length--;
+            }
+            
         }
 
         public void OverrideString()

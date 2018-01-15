@@ -36,8 +36,8 @@ namespace ListTesting
             //assert
             Assert.AreEqual(8, numberTest.Length);
         }
-
-        /*public void AddIntTestLargeSize()
+        [TestMethod]
+        public void AddIntTestLargeSize()
         {
             //arrange
             MyList<int> numberTest = new MyList<int>();
@@ -61,9 +61,9 @@ namespace ListTesting
             numberTest.Add(15);
 
             //assert
-            Assert.AreEqual(15, numberTest.Count);
+            Assert.AreEqual(16, numberTest.Count);
         }
-
+        [TestMethod]
         public void AddingStringTest()
         {
             //arrange
@@ -75,7 +75,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(2, adding);
         }
-
+        [TestMethod]
         public void AddingObject()
         {
             //arrange
@@ -93,7 +93,8 @@ namespace ListTesting
             Assert.AreEqual(16, list.Count);
 
         }
-
+        /*
+        [TestMethod]
         public void RemoveIntCountTest()
         {
             //arrange
@@ -106,7 +107,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(2, removeTest.Count);
         }
-
+        [TestMethod]
         public void RemoveIntCountTestLarge()
         {
             //arrange
@@ -123,7 +124,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(2, removeTest.Count);
         }
-
+        [TestMethod]
         public void RemovingStringTest()
         {
             //arrange
@@ -136,7 +137,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(2, stringRemoveTest.Count);
         }
-
+        [TestMethod]
         public void RemovingStringTestLarge()
         {
             //arrange
@@ -156,7 +157,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(3, stringRemoveTest.Count);
         }
-
+        [TestMethod]
         public void RemovingObject()
         {
             //arrange
@@ -175,7 +176,7 @@ namespace ListTesting
             Assert.AreEqual(10, remove);
 
         }
-
+        [TestMethod]
         public void IndexCheckObject()
         {
             //arrange
@@ -192,8 +193,8 @@ namespace ListTesting
            
             //arrange
             Assert.AreEqual(objectList, list[0]);
-        }
-
+        }*/
+        [TestMethod]
         public void ChekcingIndexInt()
         {
             //arrange
@@ -220,7 +221,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(9, numberTest[10]);
         }
-
+        [TestMethod]
         public void CheckingIndexString()
         {
             //arrange
@@ -243,6 +244,6 @@ namespace ListTesting
         public void CountTest()
         {
 
-        }*/
+        }
     }
 }

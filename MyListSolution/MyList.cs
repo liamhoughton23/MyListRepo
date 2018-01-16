@@ -9,7 +9,6 @@ namespace MyListSolution
     public class MyList<T>
     {
         T[] array;
-        private int length;
         private int count;
         private int capacity;
 
@@ -18,61 +17,60 @@ namespace MyListSolution
             capacity = 4;
             array = new T[5];           
             count = Count;
-            length = Length;
+           
             
         }
-
+        public T this[int index]
+        {
+            get { return array[index]; }
+            set { array[index] = value;}
+        }
 
         public int Count
         {
-            get {
-                return count; }
+            get {return count; }
+            
            
-        }
-        
-        public int Length
-        {
-            get { return length; }
-            set {
-                length = value; }
         }
         public void LargerArray()
         {
-            int newCapacity = capacity * 10;
-            array = new T[newCapacity];
+            T[] newArray = new T[capacity * 4];
+            for (int i = 0; i < count; i++)
+            {
+                newArray[i] = array[i];
+              
+            }
+            capacity = capacity * 4;
+            array = newArray;
         }
+
         public void Add(T item)
         {
-            if (count == 0)
-            {
-                array[0] = item;
-                count++;
-                length++;
-            }
-            else if (count > 0 && count < capacity)
-            {
-                length++;
-                array[length] = item;
-                count++;
-            }
-            else if (count >= capacity)
+            if (count >= capacity)
             {
                 LargerArray();
-                length++;
-                array[length] = item;
-                count++;
+                   
             }
+            array[count] = item;
+            count++;
         }
 
         public void Remove(T item)
         {
-            if ( == item)
+            for (int i = 0; i < count; i++)
             {
-                length--;
+                if(array[i].Equals(item))
+                {
+                    array[i] = array[i + 1];
+                    count--;
+                }
+
+
             }
             
+                
+            
         }
-
         public void OverrideString()
         {
             //ability to change the toString thing that makes everything that is added into the list a string

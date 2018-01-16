@@ -10,26 +10,20 @@ namespace MyListSolution
     {
         static void Main(string[] args)
         {
-            //arrange
-            MyList<int> numberTest = new MyList<int>();
-
+            MyList<int> removeTest = new MyList<int>();
+            removeTest.Add(0);
+            removeTest.Add(1);
+            removeTest.Add(2);
+            removeTest.Add(3);
+            removeTest.Add(4);
             //act
-            numberTest.Add(0);
-            numberTest.Add(1);
-            numberTest.Add(2);
-            numberTest.Add(3);
-            numberTest.Add(4);
-            numberTest.Add(5);
-            numberTest.Add(6);
-            numberTest.Add(7);
-            numberTest.Add(8);
-            numberTest.Add(9);
-            numberTest.Add(10);
-            numberTest.Add(11);
-            numberTest.Add(12);
-            numberTest.Add(13);
-            numberTest.Add(14);
-            numberTest.Add(15);
+            removeTest.Remove(2);
+            removeTest.Remove(3);
+            removeTest.Remove(4);
+
+            Console.ReadKey();
+
+
         }
     }
 }

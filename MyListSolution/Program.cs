@@ -21,9 +21,6 @@ namespace MyListSolution
             removeTest.Remove(3);
             removeTest.Remove(4);
 
-            Console.ReadKey();
-
-
         }
     }
 }

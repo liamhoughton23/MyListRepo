@@ -134,7 +134,7 @@ namespace ListTesting
             stringRemoveTest.Add("Second add");
             stringRemoveTest.Add("Third add");
             //act
-            stringRemoveTest.Remove("Second Add");
+            stringRemoveTest.Remove("First add");
             //assert
             Assert.AreEqual(2, stringRemoveTest.Count);
         }
@@ -151,10 +151,10 @@ namespace ListTesting
             stringRemoveTest.Add("Sixth add");
             stringRemoveTest.Add("Seventh add");
             //act
-            stringRemoveTest.Remove("Second Add");
             stringRemoveTest.Remove("First add");
+            stringRemoveTest.Remove("Second add");
             stringRemoveTest.Remove("Third add");
-            stringRemoveTest.Remove("Seventh add");
+            stringRemoveTest.Remove("Fourth add");
             //assert
             Assert.AreEqual(3, stringRemoveTest.Count);
         }
@@ -224,6 +224,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(10, numberTest[10]);
         }
+        
         [TestMethod]
         public void CheckingIndexStringRemove()
         {
@@ -237,15 +238,157 @@ namespace ListTesting
             stringRemoveTest.Add("Sixth add");
             stringRemoveTest.Add("Seventh add");//
             //act
-            stringRemoveTest.Remove("Second Add");
+            stringRemoveTest.Remove("Second add");
             stringRemoveTest.Remove("First add");
             stringRemoveTest.Remove("Third add");
             stringRemoveTest.Remove("Seventh add");
             //assert
             Assert.AreEqual("Sixth add", stringRemoveTest[6]);
         }
+        
         [TestMethod]
-        public void 
-  
+        public void OperatorPlusInt()
+        {
+            //arrange
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            MyList<int> result;
+            numberPlus1.Add(9);
+            numberPlus1.Add(4);
+            numberPlus1.Add(6);
+            numberPlus2.Add(8);
+            numberPlus2.Add(7);
+            numberPlus2.Add(5);
+            //act
+            result = numberPlus1 + numberPlus2;
+            //assert
+            Assert.AreEqual(6, result.Count);
+        }
+        [TestMethod]
+        public void OperatorPlusIndex()
+        {
+            //arrange
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            MyList<int> result;
+            numberPlus1.Add(9);
+            numberPlus1.Add(4);
+            numberPlus1.Add(6);
+            numberPlus2.Add(8);
+            numberPlus2.Add(7);
+            numberPlus2.Add(5);
+            //act
+            result = numberPlus1 + numberPlus2;
+            //assert
+            Assert.AreEqual(8, result[3]);
+        }
+        [TestMethod]
+        public void OperatorPlusString()
+        {
+            //arrange
+            MyList<string> stringPlus1 = new MyList<string>();
+            MyList<string> stringPlus2 = new MyList<string>();
+            MyList<string> result;
+            stringPlus1.Add("one");
+            stringPlus1.Add("two");
+            stringPlus1.Add("three");
+            stringPlus2.Add("four");
+            stringPlus2.Add("five");
+            stringPlus2.Add("six");
+            //act
+            result = stringPlus1 + stringPlus2;
+            //assert
+            Assert.AreEqual(6, result.Count);
+
+        }
+        /*
+        [TestMethod]
+        public void OperatorMinusString()
+        {
+            //arrange
+            MyList<string> stringPlus1 = new MyList<string>();
+            MyList<string> stringPlus2 = new MyList<string>();
+            MyList<string> result;
+            stringPlus1.Add("one");
+            stringPlus1.Add("two");
+            stringPlus1.Add("three");
+            stringPlus2.Add("four");
+            stringPlus2.Add("five");
+            stringPlus2.Add("six");
+            //act
+            result = stringPlus1 - stringPlus2;
+            //assert
+            Assert.AreEqual(3, result.Count);
+        }
+        [TestMethod]
+        public void OperatorMinusInt()
+        {
+            //arrange
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            MyList<int> result;
+            numberPlus1.Add(7);
+            numberPlus1.Add(8);
+            numberPlus1.Add(3);
+            numberPlus2.Add(5);
+            numberPlus2.Add(9);
+            numberPlus2.Add(1);
+            //act
+            result = numberPlus1 - numberPlus2;
+            //assert
+            Assert.AreEqual(3, result.Count);
+        }
+        [TestMethod]
+        public void OperatorMinusIndex()
+        {
+            //arrange
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            MyList<int> result;
+            numberPlus1.Add(7);
+            numberPlus1.Add(8);
+            numberPlus1.Add(3);
+            numberPlus2.Add(5);
+            numberPlus2.Add(9);
+            numberPlus2.Add(1);
+            //act
+            result = numberPlus1 - numberPlus2;
+            //assert
+            Assert.AreEqual(9, result[4]);
+        }
+        [TestMethod]
+        public void ZipIntTest()
+        {
+            //arrange
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            numberPlus1.Add(7);
+            numberPlus1.Add(8);
+            numberPlus1.Add(3);
+            numberPlus2.Add(5);
+            numberPlus2.Add(9);
+            numberPlus2.Add(1);
+            //act
+            numberPlus1.Zip(numberPlus2);
+            //assert
+            Assert.AreEqual(5, numberPlus1[1]);
+        }
+        [TestMethod]
+        public void ZipStringTest()
+        {
+            //arrange
+            MyList<string> numberPlus1 = new MyList<string>();
+            MyList<string> numberPlus2 = new MyList<string>();
+            numberPlus1.Add("six");
+            numberPlus1.Add("four");
+            numberPlus1.Add("two");
+            numberPlus2.Add("five");
+            numberPlus2.Add("three");
+            numberPlus2.Add("one");
+            //act
+            numberPlus1.Zip(numberPlus2);
+            //assert
+            Assert.AreEqual("five", numberPlus1[1]);
+            */
+        }
     }
-}

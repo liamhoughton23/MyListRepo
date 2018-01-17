@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyListSolution
 {
-    public class MyList<T>
+    public class MyList<T> //: IEnumerable<T>
     {
         T[] array;
         private int count;
@@ -59,45 +59,54 @@ namespace MyListSolution
         {
             for (int i = 0; i < count; i++)
             {
-                if(array[i].Equals(item))
+                if (array[i].Equals(item))
                 {
                     array[i] = array[i + 1];
                     count--;
                 }
-
-
+            }                                 
+        }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+        public static MyList<T> operator +(MyList<T> one, MyList<T> two)
+        {
+            MyList<T> listsTogether = new MyList<T>();
+            for (int i = 0; i < one.count; i++)
+            {
+                listsTogether.Add(one[i]);
+            }
+            for (int i = 0; i < two.count; i++)
+            {
+                listsTogether.Add(two[i]);
             }
             
-                
+            return listsTogether;
+            
             
         }
-        public void OverrideString()
+        public static MyList<T> operator -(MyList<T> one, MyList<T> two)
         {
-            //ability to change the toString thing that makes everything that is added into the list a string
+            MyList<T> listsTogether = new MyList<T>();
+            return one;
         }
-        public void OverLoadPlus()
+        
+        public MyList<T> Zip(MyList<T> twoList)
         {
-
-        }
-        public void OverLoadMinus()
-        {
-
-        }
-        public void ZipingTwoCustomClasses()
-        {
-            //create a new list to merge the two existing lists into one big list
-            //make sure that they go into the right indexes, should be every other
-        }
-
-        public void Index(T item)
-        {
-            //check to see if the stuff added is at the right index
-            //maybe an if statement 
+            if (this.count == twoList.count)
+            {
+                for (int i = 1; i < count; i + 2)
+                {
+                    
+                }
+            }
         }
        
         public void DisplayInfo()
         {
             
         }
+        
     }
 }

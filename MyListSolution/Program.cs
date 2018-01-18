@@ -10,17 +10,17 @@ namespace MyListSolution
     {
         static void Main(string[] args)
         {
-            MyList<int> removeTest = new MyList<int>();
-            removeTest.Add(0);
-            removeTest.Add(1);
-            removeTest.Add(2);
-            removeTest.Add(3);
-            removeTest.Add(4);
+            MyList<int> numberPlus1 = new MyList<int>();
+            MyList<int> numberPlus2 = new MyList<int>();
+            numberPlus1.Add(7);
+            numberPlus1.Add(8);
+            numberPlus1.Add(3);
+            numberPlus2.Add(5);
+            numberPlus2.Add(9);
+            numberPlus2.Add(1);
             //act
-            removeTest.Remove(2);
-            removeTest.Remove(3);
-            removeTest.Remove(4);
-
+            numberPlus1.Zip(numberPlus2);
+            
         }
     }
 }

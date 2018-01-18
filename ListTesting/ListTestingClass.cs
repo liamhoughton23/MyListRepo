@@ -301,7 +301,7 @@ namespace ListTesting
             Assert.AreEqual(6, result.Count);
 
         }
-        /*
+        
         [TestMethod]
         public void OperatorMinusString()
         {
@@ -345,6 +345,7 @@ namespace ListTesting
             MyList<int> numberPlus1 = new MyList<int>();
             MyList<int> numberPlus2 = new MyList<int>();
             MyList<int> result;
+            MyList<string> result2;
             numberPlus1.Add(7);
             numberPlus1.Add(8);
             numberPlus1.Add(3);
@@ -356,6 +357,7 @@ namespace ListTesting
             //assert
             Assert.AreEqual(9, result[4]);
         }
+        
         [TestMethod]
         public void ZipIntTest()
         {
@@ -389,6 +391,22 @@ namespace ListTesting
             numberPlus1.Zip(numberPlus2);
             //assert
             Assert.AreEqual("five", numberPlus1[1]);
-            */
+        
+        [TestMethod]
+        public void toStringTest()
+        {
+            //arrange
+            MyList<int> stringTest = new MyList<int>();
+            stringTest.Add(5);
+            stringTest.Add(7);
+            stringTest.Add(8);
+            stringTest.Add(10);
+            //act
+            string result = stringTest.ToString();
+            //assert
+            Assert.Equals("5 7 8 10", result);
+            
+
         }
     }
+}

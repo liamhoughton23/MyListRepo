@@ -17,7 +17,6 @@ namespace MyListSolution
             capacity = 4;
             array = new T[5];           
             count = Count;
-           
             
         }
         public T this[int index]
@@ -34,13 +33,13 @@ namespace MyListSolution
         }
         public void LargerArray()
         {
-            T[] newArray = new T[capacity * 4];
+            T[] newArray = new T[capacity * 7];
             for (int i = 0; i < count; i++)
             {
                 newArray[i] = array[i];
               
             }
-            capacity = capacity * 4;
+            capacity = capacity * 7;
             array = newArray;
         }
 
@@ -61,15 +60,27 @@ namespace MyListSolution
             {
                 if (array[i].Equals(item))
                 {
-                    array[i] = array[i + 1];
                     count--;
+                    for (i = ; i--)
+                    {
+                        array[i] = array[i + 1];
+                    }
                 }
             }                                 
         }
-        public override string ToString()
+        /*
+        public override string ToString(MyList<T> convertList)
         {
-            return base.ToString();
+            string thisString = " ";
+            for (int i = 0; i < count; i++)
+                {
+                   
+                }
+
+
+            return;
         }
+        */
         public static MyList<T> operator +(MyList<T> one, MyList<T> two)
         {
             MyList<T> listsTogether = new MyList<T>();
@@ -96,16 +107,13 @@ namespace MyListSolution
         {
             if (this.count == twoList.count)
             {
-                for (int i = 1; i < count; i + 2)
+                for (int i = 1; i < count; i += 2)
                 {
-                    
+                    count++;
+                    this.Add(twoList[i]);
                 }
             }
-        }
-       
-        public void DisplayInfo()
-        {
-            
+            return this;
         }
         
     }
